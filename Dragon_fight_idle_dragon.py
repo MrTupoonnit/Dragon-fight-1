@@ -1,4 +1,5 @@
 #Dragon Fight game
+import random
 
 #User info and stats
 user_name = input("What should we call you ? :  ")
@@ -14,8 +15,10 @@ enemy_hp = 75
 enemy_skills = ["Fire Breath","Claw Attack","Tail Whip"]
 enemy_damage_points = [20,15,15]
 
-while True  :
-    print(f"While Traveling through the woods,{user_name} encountered a {enemy}..Now a battle begins ")
+#intro
+print(f"While Traveling through the woods,{user_name} encountered a {enemy}..Now a battle begins")
+
+while True  :     
     print(f"{ user_name}: {user_hp} Vs {enemy}: {enemy_hp}")
     for number, skill in enumerate(user_skills, start =1) :
         print(f"{number}.{skill}")
@@ -28,10 +31,22 @@ while True  :
         if enemy_hp <= 0 :
             print(f"Alas the brave { user_name} has slain the {enemy}")
             print("Thank you for playing")
-            break 
-        print(f"{ user_name}: {user_hp} Vs {enemy}: {enemy_hp}")
+            break        
         amount_available[0] -= 1
         print(f"You have {amount_available[0] } {user_skills[0]}(s) left ")
+        #enemy turn 
+        enemy_attack = random.choice(enemy_skills)       
+        dmg = enemy_skills.index(enemy_attack)
+        delt_dmg =enemy_damage_points[int(dmg)]
+        user_hp -= delt_dmg
+        if user_hp <= 0 :
+            print(f"Alas,the brave { user_name} was by slain the {enemy}")
+            print("Thank you for playing...Please try again")
+            break                 
+        print(f"The {enemy} used {enemy_attack}.")
+        print(f"This delt {delt_dmg} damage to {user_name}")
+        print(f"{ user_name}: {user_hp} Vs {enemy}: {enemy_hp}")
+
        
 
     elif action == "2" :
@@ -41,11 +56,22 @@ while True  :
         if enemy_hp <= 0 :
             print(f"Alas the brave { user_name} has slain the {enemy}")
             print("Thank you for playing")
-            break
-        print(f"{ user_name}: {user_hp} Vs {enemy}: {enemy_hp}")
+            break       
         amount_available[1] -= 1
         print(f"You have {amount_available[1] } {user_skills[1]}(s) left ")
-        
+        #enemy turn 
+        enemy_attack = random.choice(enemy_skills)       
+        dmg = enemy_skills.index(enemy_attack)
+        delt_dmg =enemy_damage_points[int(dmg)]
+        user_hp -= delt_dmg
+        if user_hp <= 0 :
+            print(f"Alas,the brave { user_name} was by slain the {enemy}")
+            print("Thank you for playing...Please try again")
+            break                 
+        print(f"The {enemy} used {enemy_attack}.")
+        print(f"This delt {delt_dmg} damage to {user_name}")
+        print(f"{ user_name}: {user_hp} Vs {enemy}: {enemy_hp}")
+
 
     elif action == "3" :
         print(f"{ user_name}: used {user_skills[2]}")
@@ -54,10 +80,22 @@ while True  :
         if enemy_hp <= 0 :
             print(f"Alas the brave { user_name} has slain the {enemy}")
             print("Thank you for playing")
-            break
-        print(f"{ user_name}: {user_hp} Vs {enemy}: {enemy_hp}")
+            break        
         amount_available[2] -= 1
         print(f"You have {amount_available[2] } {user_skills[2]}(s) left ")
+        #enemy turn 
+        enemy_attack = random.choice(enemy_skills)       
+        dmg = enemy_skills.index(enemy_attack)
+        delt_dmg =enemy_damage_points[int(dmg)]
+        user_hp -= delt_dmg
+        if user_hp <= 0 :
+            print(f"Alas,the brave { user_name} was by slain the {enemy}")
+            print("Thank you for playing...Please try again")
+            break                 
+        print(f"The {enemy} used {enemy_attack}.")
+        print(f"This delt {delt_dmg} damage to {user_name}")
+        print(f"{ user_name}: {user_hp} Vs {enemy}: {enemy_hp}")
+
         
 
     elif action == "4" :
@@ -67,10 +105,22 @@ while True  :
         if enemy_hp <= 0 :
             print(f"Alas the brave { user_name} has slain the {enemy}")
             print("Thank you for playing")
-            break
-        print(f"{ user_name}: {user_hp} Vs{enemy}: {enemy_hp}")
+            break        
         amount_available[3] -= 1
         print(f"You have {amount_available[3]} {user_skills[3]}(s) left ")
+        #enemy turn 
+        enemy_attack = random.choice(enemy_skills)       
+        dmg = enemy_skills.index(enemy_attack)
+        delt_dmg =enemy_damage_points[int(dmg)]
+        user_hp -= delt_dmg
+        if user_hp <= 0 :
+            print(f"Alas,the brave { user_name} was by slain the {enemy}")
+            print("Thank you for playing...Please try again")
+            break                 
+        print(f"The {enemy} used {enemy_attack}.")
+        print(f"This delt {delt_dmg} damage to {user_name}")
+        print(f"{ user_name}: {user_hp} Vs {enemy}: {enemy_hp}")
+
         
 
     
